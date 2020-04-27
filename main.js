@@ -15,8 +15,8 @@ function handleEnter() {
   highlight.style.opacity = 1;
   highlight.style.width = `${linkCoords.width}px`;
   highlight.style.height = `${linkCoords.height}px`;
-  highlight.style.bottom = `${linkCoords.top}`;
-  highlight.style.left = `${linkCoords.left}`;
+  highlight.style.top = `${linkCoords.top + window.scrollY}`;
+  highlight.style.left = `${linkCoords.left + window.scrollX}`;
 
   lastElement = this;
 }
