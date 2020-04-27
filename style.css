@@ -18,6 +18,10 @@ body {
           align-items: center;
   min-height: 100vh;
   font-family: sans-serif;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 a {
@@ -41,16 +45,35 @@ li {
   margin: 6px;
 }
 
+.title {
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
 .highlight {
   display: inline-block;
   position: absolute;
   opacity: 0;
-  background: coral;
-  border-radius: 24px;
+  border-radius: 12px;
+  border: 6px solid coral;
+  background: transparent;
   z-index: -1;
   width: 1px;
   height: 6px;
   -webkit-transition: width 0.2s ease-in-out, top 0.2s ease-in-out, left 0.2s ease-in-out, opacity 0.1s;
   transition: width 0.2s ease-in-out, top 0.2s ease-in-out, left 0.2s ease-in-out, opacity 0.1s;
+}
+
+.active {
+  border-bottom: 6px solid coral;
+  margin-bottom: 0;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 /*# sourceMappingURL=style.css.map */
