@@ -4,6 +4,7 @@ const highlight = document.querySelector(".highlight");
 const firstLink = document.querySelector("a");
 
 let lastElement;
+
 function handleEnter() {
   if (lastElement) {
     lastElement.classList.remove("active");
@@ -14,8 +15,7 @@ function handleEnter() {
   linkCoords = this.getBoundingClientRect();
   highlight.style.opacity = 1;
   highlight.style.width = `${linkCoords.width}px`;
-  highlight.style.height = `${linkCoords.height}px`;
-  highlight.style.top = `${linkCoords.top + window.scrollY}`;
+  highlight.style.top = `${linkCoords.bottom + window.scrollY}`;
   highlight.style.left = `${linkCoords.left + window.scrollX}`;
 
   lastElement = this;

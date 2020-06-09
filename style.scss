@@ -45,13 +45,15 @@ main {
     position: absolute;
     opacity: 0;
     border-radius: 12px;
-    border: 6px solid coral;
+    border: 3px solid coral;
     margin-bottom: -6px;
     background: transparent;
     z-index: -1;
     width: 1px;
-    height: 6px;
-    transition: width 0.125s ease-out, top 0.125s ease-out, left 0.125s ease-out;
+    height: 3px;
+    transition: width 0.125s cubic-bezier(0.16, 0.59, 0.51, 1.12),
+      top 0.25s cubic-bezier(0.16, 0.59, 0.51, 1.12),
+      left 0.25s cubic-bezier(0.16, 0.59, 0.51, 1.12);
   }
 
   ul {
@@ -63,7 +65,7 @@ main {
   }
 
   .active {
-    border-bottom: 6px solid coral;
+    color: coral;
     margin-bottom: 0;
     transition: border 0.125s 0.075s;
   }
