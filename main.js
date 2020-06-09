@@ -11,6 +11,7 @@ function handleEnter() {
   } else {
     firstLink.classList.remove("active");
   }
+  clearActiveClasses();
 
   linkCoords = this.getBoundingClientRect();
   highlight.style.opacity = 1;
@@ -25,6 +26,14 @@ function handleLeave() {
   highlight.style.width = 0;
   highlight.style.opacity = 0;
   lastElement.classList.add("active");
+}
+
+function clearActiveClasses() {
+  links.forEach((link) => {
+    if (link.classList.contains("active")) {
+      link.classList.remove("active");
+    }
+  });
 }
 
 links.forEach((link) => link.addEventListener("mouseenter", handleEnter));
